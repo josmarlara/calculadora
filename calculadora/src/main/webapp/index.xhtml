@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+     
+    <h:head>
+    <title>Calculadora aritmética</title>
+    </h:head>
+ 
+    <h:body>
+      <h:form>
+      <p:panelGrid class="ui-noborder">
+       <f:facet name="header">  
+            <p:row>  
+                <p:column style="font-weight: bold;">Introduce los parámetros</p:column>  
+                 <p:column style="font-weight: bold;"></p:column>  
+            </p:row>  
+        </f:facet>
+      
+       <p:row>  
+           <p:column>  
+               <h:outputLabel value="Parametro1: "/>
+            </p:column>  
+            <p:column>  
+                <p:inputNumber id="parametro1" value="#{calculadora.parametro1}">  
+                    <p:ajax update="parametro1" />  
+                </p:inputNumber>  
+            </p:column>  
+       </p:row>
+       <p:row>  
+           <p:column>  
+               <h:outputLabel value="Parametro2: "/>
+            </p:column>  
+            <p:column>  
+                <p:inputNumber id="parametro2" value="#{calculadora.parametro2}">  
+                    <p:ajax update="parametro2" />  
+                </p:inputNumber>  
+            </p:column>  
+       </p:row>
+      
+        <p:row>  
+           <p:column>  
+             <h:commandButton value="Suma" action="#{calculadora.suma}"/>
+              <h:commandButton value="Resta" action="#{calculadora.resta}"/>
+             <h:commandButton value="Multiplicación" action="#{calculadora.multiplicacion}"/>
+              <h:commandButton value="División" action="#{calculadora.division}"/>
+            </p:column>  
+       </p:row>
+      
+       <p:row>  
+           <p:column>  
+             <h:outputLabel value="Resultado: "/>
+              <h:outputText value="#{calculadora.resultado}"/>
+              </p:column>   
+       </p:row>
+      
+         
+         
+         </p:panelGrid>
+      
+      
+      
+      </h:form>  
+        
+        
+        
+        
+    </h:body>
+</html>
